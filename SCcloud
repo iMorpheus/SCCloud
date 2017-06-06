@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ### INPUT ###
+ls .;
 read -p "File to be converted: " -e TSRC;
 
 
@@ -8,11 +9,14 @@ read -p "File to be converted: " -e TSRC;
 read -p "Destination Folder: " -e DEST;
 mkdir $DEST;
 
+### FUNCTION ###
+
 function SCcloud(){
 x=0;
 CNT=$TSRC;
 while IFS= read -r CNT
 do
+	open ./$DEST/;
 	say -v Daniel $CNT -o "./$DEST/"$x"_Of".m4a ;
 	((x++));
 	echo $x;
