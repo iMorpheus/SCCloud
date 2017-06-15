@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 ### INPUT ###
@@ -12,14 +13,14 @@ mkdir $DEST;
 ### FUNCTION ###
 
 function SCcloud(){
-x=0;
+x=1;
 CNT=$TSRC;
 while IFS= read -r CNT
 do
-	open ./$DEST/;
-	say -v Daniel $CNT -o "./$DEST/"$x"_Of".m4a ;
-	((x++));
-	echo $x;
+        open ./$DEST/;
+        say -r 20 -v Daniel $CNT -o "./$DEST/"$x"_of_"$DEST.m4a ;
+        ((x++));
+        echo $x;
 done < "$CNT"
 
 clear;
